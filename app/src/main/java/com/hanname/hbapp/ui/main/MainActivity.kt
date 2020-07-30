@@ -340,6 +340,31 @@ class MainActivity : BaseActivity(), Main.View, Handler.Callback {
                 }
             }
 
+            Constants.CARDRESULTMSG_FAIL -> {
+                PrintLog.d(TAG, "CARDRESULTMSG_FAIL")
+                val msgStr = msg.obj as String
+                Toast.makeText(
+                    this@MainActivity,
+                    "card error:$msgStr",
+                    Toast.LENGTH_SHORT
+                ).show()
+                webview.reload()
+            }
+
+            Constants.CARDRESULTMSG_OK -> {
+                PrintLog.d(TAG, "CARDRESULTMSG_OK")
+                Toast.makeText(
+                    this@MainActivity,
+                    "OK",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                val moveUrl = msg.obj as String
+                PrintLog.d(TAG, "redirect to  $moveUrl")
+                if (!TextUtils.isEmpty(moveUrl) || moveUrl.startsWith("http", ignoreCase = true)) {
+                    webview?.loadUrl(moveUrl)
+                }
+            }
 //            Constants.MSG_USE_AUDIO -> { //psg 20191014 :STT
 //                PrintLog.d(TAG, "MSG_USE_AUDIO")
 //                ActivityCompat.requestPermissions(this@MainActivity,

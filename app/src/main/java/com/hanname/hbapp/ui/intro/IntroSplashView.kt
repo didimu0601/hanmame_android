@@ -48,68 +48,68 @@ class IntroSplashView @JvmOverloads constructor(
                     return@setOnClickListener
                 }
 
-                val dialog = object : ServerSettingDialog(activity) {
-                    override fun selectRelServer() {
-                        ServerType.apiUrl = ServerType.REL.getApiUrl()
-                        shared.setInt(SharedPref.PREF_SERVER_MODE, ServerType.REL.code)
-                        Toast.makeText(this.context, "Rel Server Setting...", Toast.LENGTH_SHORT).show()
-                        dismiss()
-                        Handler().postDelayed({
-                            Utils.finishApplication(activity, true)
-                        }, 500)
-                    }
-
-                    override fun selectDevServer() {
-                        ServerType.apiUrl = ServerType.DEV.getApiUrl()
-                        shared.setInt(SharedPref.PREF_SERVER_MODE, ServerType.DEV.code)
-                        Toast.makeText(this.context, "Dev Server Setting...", Toast.LENGTH_SHORT).show()
-                        dismiss()
-                        Handler().postDelayed({
-                            Utils.finishApplication(activity, true)
-                        }, 500)
-                    }
-
-                    override fun selectQaServer() {
-                        ServerType.apiUrl = ServerType.QA.getApiUrl()
-                        shared.setInt(SharedPref.PREF_SERVER_MODE, ServerType.QA.code)
-                        Toast.makeText(this.context, "Qa Server Setting...", Toast.LENGTH_SHORT).show()
-                        dismiss()
-                        Handler().postDelayed({
-                            Utils.finishApplication(activity, true)
-                        }, 500)
-                    }
-
-                    override fun selectSslRelServer() {
-                        ServerType.apiUrl = ServerType.REL.getApiUrl()
-                        shared.setInt(SharedPref.PREF_SERVER_MODE, ServerType.SSLREL.code)
-                        Toast.makeText(this.context, "SslRel Server Setting...", Toast.LENGTH_SHORT).show()
-                        dismiss()
-                        Handler().postDelayed({
-                            Utils.finishApplication(activity, true)
-                        }, 500)
-                    }
-
-                    override fun selectSslDevServer() {
-                        ServerType.apiUrl = ServerType.DEV.getApiUrl()
-                        shared.setInt(SharedPref.PREF_SERVER_MODE, ServerType.SSLDEV.code)
-                        Toast.makeText(this.context, "SslDev Server Setting...", Toast.LENGTH_SHORT).show()
-                        dismiss()
-                        Handler().postDelayed({
-                            Utils.finishApplication(activity, true)
-                        }, 500)
-                    }
-
-                    override fun selectSslQaServer() {
-                        ServerType.apiUrl = ServerType.QA.getApiUrl()
-                        shared.setInt(SharedPref.PREF_SERVER_MODE, ServerType.SSLQA.code)
-                        Toast.makeText(this.context, "SslQa Server Setting...", Toast.LENGTH_SHORT).show()
-                        dismiss()
-                        Handler().postDelayed({
-                            Utils.finishApplication(activity, true)
-                        }, 500)
-                    }
-                }
-                dialog.show()
+//                val dialog = object : ServerSettingDialog(activity) {
+//                    override fun selectRelServer() {
+//                        ServerType.apiUrl = ServerType.REL.getApiUrl()
+//                        shared.setInt(SharedPref.PREF_SERVER_MODE, ServerType.REL.code)
+//                        Toast.makeText(this.context, "Rel Server Setting...", Toast.LENGTH_SHORT).show()
+//                        dismiss()
+//                        Handler().postDelayed({
+//                            Utils.finishApplication(activity, true)
+//                        }, 500)
+//                    }
+//
+//                    override fun selectDevServer() {
+//                        ServerType.apiUrl = ServerType.DEV.getApiUrl()
+//                        shared.setInt(SharedPref.PREF_SERVER_MODE, ServerType.DEV.code)
+//                        Toast.makeText(this.context, "Dev Server Setting...", Toast.LENGTH_SHORT).show()
+//                        dismiss()
+//                        Handler().postDelayed({
+//                            Utils.finishApplication(activity, true)
+//                        }, 500)
+//                    }
+//
+//                    override fun selectQaServer() {
+//                        ServerType.apiUrl = ServerType.QA.getApiUrl()
+//                        shared.setInt(SharedPref.PREF_SERVER_MODE, ServerType.QA.code)
+//                        Toast.makeText(this.context, "Qa Server Setting...", Toast.LENGTH_SHORT).show()
+//                        dismiss()
+//                        Handler().postDelayed({
+//                            Utils.finishApplication(activity, true)
+//                        }, 500)
+//                    }
+//
+//                    override fun selectSslRelServer() {
+//                        ServerType.apiUrl = ServerType.REL.getApiUrl()
+//                        shared.setInt(SharedPref.PREF_SERVER_MODE, ServerType.SSLREL.code)
+//                        Toast.makeText(this.context, "SslRel Server Setting...", Toast.LENGTH_SHORT).show()
+//                        dismiss()
+//                        Handler().postDelayed({
+//                            Utils.finishApplication(activity, true)
+//                        }, 500)
+//                    }
+//
+//                    override fun selectSslDevServer() {
+//                        ServerType.apiUrl = ServerType.DEV.getApiUrl()
+//                        shared.setInt(SharedPref.PREF_SERVER_MODE, ServerType.SSLDEV.code)
+//                        Toast.makeText(this.context, "SslDev Server Setting...", Toast.LENGTH_SHORT).show()
+//                        dismiss()
+//                        Handler().postDelayed({
+//                            Utils.finishApplication(activity, true)
+//                        }, 500)
+//                    }
+//
+//                    override fun selectSslQaServer() {
+//                        ServerType.apiUrl = ServerType.QA.getApiUrl()
+//                        shared.setInt(SharedPref.PREF_SERVER_MODE, ServerType.SSLQA.code)
+//                        Toast.makeText(this.context, "SslQa Server Setting...", Toast.LENGTH_SHORT).show()
+//                        dismiss()
+//                        Handler().postDelayed({
+//                            Utils.finishApplication(activity, true)
+//                        }, 500)
+//                    }
+//                }
+//                dialog.show()
             }
         }
     }

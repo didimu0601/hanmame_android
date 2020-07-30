@@ -22,6 +22,8 @@ enum class Scheme(private val host: String) {
     MOVEURL("moveUrl"),
     CLOSE_FIND_WINDOW("closeFindview"),
     EXTERNALBROWSER("externalBrowser"),
+    CARDREQUEST("cardrequest"),
+    CARDRESULT("cardresult"),
     USE_AUDIO("useAudio"); //psg 20191014 :STT
 
     fun valueOf(): String {
@@ -136,7 +138,33 @@ enum class Scheme(private val host: String) {
                     context?.startActivity(browserIntent)
                     return true
                 }
+                host.equals(CARDREQUEST.host, ignoreCase = true) -> {
+                    PrintLog.d(TAG, "scheme card Request")
+                    val moveUrl = "http://www.hanname.com" + uri.getQueryParameter("p")
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(moveUrl))
+                    context?.startActivity(browserIntent)
+                    return true
+                }
+                host.equals(CARDRESULT.host, ignoreCase = true) -> {
+                    PrintLog.d(TAG, "scheme card Request")
 
+                    val msgStr = uri.getQueryParameter("msg")
+                    val msg = Message.obtain()
+                    if(msgStr.equals("OK",ignoreCase = true))
+                    {
+                        msg?.what = Constants.CARDRESULTMSG_OK
+                        val urlStr = "http://www.hanname.com" + uri.getQueryParameter("p")
+
+                        msg?.obj = urlStr
+                    }else{
+                        msg?.what = Constants.CARDRESULTMSG_FAIL
+                        msg?.obj = msgStr
+                    }
+
+
+                    MessageHandler(context, context as Handler.Callback).sendMessage(msg)
+                    return true
+                }
                 host.equals(USE_AUDIO.host, ignoreCase = true) -> {//psg 20191014 :STT
                     PrintLog.d(TAG, "scheme useAudio")
                     val msg =  Message.obtain()

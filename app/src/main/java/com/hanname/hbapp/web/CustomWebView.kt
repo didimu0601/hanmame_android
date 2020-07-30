@@ -10,6 +10,7 @@ import android.os.Environment.DIRECTORY_DOWNLOADS
 import android.util.AttributeSet
 import android.webkit.CookieManager
 import android.webkit.URLUtil.guessFileName
+import android.webkit.WebSettings
 import android.webkit.WebView
 import android.widget.Toast
 import com.hanname.hbapp.R
@@ -35,7 +36,7 @@ class CustomWebView @JvmOverloads constructor(
 //        settings.pluginState = WebSettings.PluginState.ON // Plug In 허용
         settings.setSupportMultipleWindows(true) // Multiple window ons
         settings.javaScriptCanOpenWindowsAutomatically = true
-//        settings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+        settings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
 
         var userAgent = settings.getUserAgentString();
 

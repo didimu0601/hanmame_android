@@ -95,7 +95,7 @@ class SettingsActivity : BaseActivity(), Settings.View {
 
                 if(verPressed % 6 == 5){
                     verPressed = 0
-                    showServerDialog()
+//                    showServerDialog()
                 }
             }
         }

@@ -15,6 +15,8 @@ interface Constants {
         const val MSG_PAGELOAD_ERROR = 5
         const val KAKAO_NOUI_LOGIN = 6 //psg 20200219
         const val NAVER_NOUI_LOGIN = 7 //psg 20200219
+        const val CARDRESULTMSG_OK = 8 //psg 20200729
+        const val CARDRESULTMSG_FAIL = 9 //psg 20200729
         const val SCHEME_HB_APP = "hannameapp"
         const val RELSERVER = 0
         const val DEVSERVER = 1

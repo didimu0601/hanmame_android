@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Hanname</string>
+    <string name="app_name">철학캠프</string>
     <string name="app_copyright">철학캠프</string>
     <string name="input_id_hint">아이디</string>
     <string name="input_pw_hint">비밀번호</string>
